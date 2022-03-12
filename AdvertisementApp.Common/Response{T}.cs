@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace AdvertisementApp.Common
 {
-    internal class Response<T> : Response, IResponse<T>
+    public class Response<T> : Response, IResponse<T>
     {
         public T Data { get; set; }
-        public List<CustomValidatorError> ValidatorErrors { get; set; }
+        public List<CustomValidationError> ValidationErrors { get; set; }
         public Response(ResponseType responseType,string message) : base(responseType,message)
         {
         }
@@ -17,10 +17,10 @@ namespace AdvertisementApp.Common
         {
             Data = data;
         }
-        public Response(T data,List<CustomValidatorError> errors):base(ResponseType.ValidatorError)
+        public Response(T data,List<CustomValidationError> errors):base(ResponseType.ValidatorError)
         {
             Data=data;
-            ValidatorErrors = errors;   
+            ValidationErrors = errors;   
         }
     }
 }

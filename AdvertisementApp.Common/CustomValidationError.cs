@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdvertisementApp.Common
 {
-    public class CustomValidatorError
+    public class CustomValidationError
     {
-        public string PropertyName { get; set; }
+        public string ProperyName { get; set; }
         public string ErrorMessage { get; set; }
     }
 }
