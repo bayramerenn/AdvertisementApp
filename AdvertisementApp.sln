@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdvertisementApp.Common", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.Entities", "AdvertisementApp.Entities\AdvertisementApp.Entities.csproj", "{81687431-4632-4DEF-AD26-1870723F046B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advertisement.DataAccess", "Advertisement.DataAccess\Advertisement.DataAccess.csproj", "{5001FF83-4402-4343-88F0-43B7547BDBA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdvertisementApp.DataAccess", "Advertisement.DataAccess\AdvertisementApp.DataAccess.csproj", "{5001FF83-4402-4343-88F0-43B7547BDBA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
