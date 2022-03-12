@@ -1,6 +1,6 @@
 ﻿using AdvertisementApp.Dtos.Interfaces;
 
-namespace AdvertisementApp.Dtos.AppRoleDtos
+namespace AdvertisementApp.Dtos
 {
     public class AppRoleUpdateDto : IUpdateDto
     {

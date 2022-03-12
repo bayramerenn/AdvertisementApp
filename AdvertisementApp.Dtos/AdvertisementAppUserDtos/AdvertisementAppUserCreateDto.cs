@@ -1,4 +1,4 @@
-﻿namespace AdvertisementApp.Dtos.AdvertisementAppUserDtos
+﻿namespace AdvertisementApp.Dtos
 {
     public class AdvertisementAppUserCreateDto
     {

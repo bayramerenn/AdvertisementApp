@@ -1,4 +1,6 @@
-﻿using AdvertisementApp.UI.Models;
+﻿using AdvertisementApp.Business.Interfaces;
+using AdvertisementApp.UI.Extensions;
+using AdvertisementApp.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +8,19 @@ namespace AdvertisementApp.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IProvidedServiceService _providedServiceService;
+        private readonly IAdvertisementService _advertisementService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProvidedServiceService providedServiceService, IAdvertisementService advertisementService)
         {
-            _logger = logger;
+            _providedServiceService = providedServiceService;
+            _advertisementService = advertisementService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var response = await _providedServiceService.GetAllAsync();
+            return this.ResponseView(response);
         }
 
         public IActionResult Privacy()

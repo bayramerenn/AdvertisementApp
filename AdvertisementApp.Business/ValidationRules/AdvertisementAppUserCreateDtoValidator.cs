@@ -1,5 +1,5 @@
 ﻿using AdvertisementApp.Common.Enums;
-using AdvertisementApp.Dtos.AdvertisementAppUserDtos;
+using AdvertisementApp.Dtos;
 using FluentValidation;
 using System;
 using System.Collections.Generic;

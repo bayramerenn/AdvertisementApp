@@ -1,4 +1,4 @@
-﻿using AdvertisementApp.Dtos.AppUserDtos;
+﻿using AdvertisementApp.Dtos;
 using FluentValidation;
 
 namespace AdvertisementApp.Business.ValidationRules

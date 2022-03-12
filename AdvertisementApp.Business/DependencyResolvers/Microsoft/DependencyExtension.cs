@@ -1,10 +1,10 @@
-﻿using AdvertisementApp.Business.ValidationRules;
+﻿using AdvertisementApp.Business.Interfaces;
+using AdvertisementApp.Business.Mappings.AutoMapper;
+using AdvertisementApp.Business.Services;
+using AdvertisementApp.Business.ValidationRules;
 using AdvertisementApp.DataAccess.Contexts;
-using AdvertisementApp.Dtos.AdvertisementAppUserDtos;
-using AdvertisementApp.Dtos.AdvertisementDtos;
-using AdvertisementApp.Dtos.AppUserDtos;
-using AdvertisementApp.Dtos.GenderDtos;
-using AdvertisementApp.Dtos.ProvidedServiceDtos;
+using AdvertisementApp.DataAccess.UnitOfWork;
+using AdvertisementApp.Dtos;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +20,18 @@ namespace AdvertisementApp.Business.DependencyResolvers.Microsoft
             {
                 options.UseSqlServer(configuration.GetConnectionString("Local"));
             });
+            services.AddScoped<IUow,Uow>();
+
+            services.AddAutoMapper(
+                typeof(ProvidedServiceProfile),
+                typeof(AdvertisementProfile),
+                typeof(AppUserProfile),
+                typeof(GenderProfile),
+                typeof(AppRoleProfile),
+                typeof(AdvertisementAppUserProfile),
+                typeof(AdvertisementAppUserStatusProfile),
+                typeof(MilitaryStatusProfile)
+                                );
 
             services.AddTransient<IValidator<ProvidedServiceCreateDto>, ProvidedServiceCreateDtoValidator>();
             services.AddTransient<IValidator<ProvidedServiceUpdateDto>, ProvidedServiceUpdateDtoValidator>();
@@ -32,7 +44,8 @@ namespace AdvertisementApp.Business.DependencyResolvers.Microsoft
             services.AddTransient<IValidator<GenderUpdateDto>, GenderUpdateDtoValidator>();
             services.AddTransient<IValidator<AdvertisementAppUserCreateDto>, AdvertisementAppUserCreateDtoValidator>();
 
-            //services.AddScoped<IProvidedServiceService, ProvidedServiceService>();
+            services.AddScoped<IProvidedServiceService, ProvidedServiceManager>();
+            
             //services.AddScoped<IAdvertisementService, AdvertisementService>();
             //services.AddScoped<IAppUserService, AppUserService>();
             //services.AddScoped<IGenderService, GenderService>();

@@ -1,6 +1,6 @@
 ﻿using AdvertisementApp.Common;
 using AdvertisementApp.Common.Enums;
-using AdvertisementApp.Dtos.AdvertisementAppUserDtos;
+using AdvertisementApp.Dtos;
 
 namespace AdvertisementApp.Business.Interfaces
 {

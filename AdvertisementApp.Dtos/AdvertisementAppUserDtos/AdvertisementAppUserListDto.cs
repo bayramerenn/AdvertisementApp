@@ -1,9 +1,6 @@
-﻿using AdvertisementApp.Dtos.AdvertisementAppUserStatusDtos;
-using AdvertisementApp.Dtos.AdvertisementDtos;
-using AdvertisementApp.Dtos.AppUserDtos;
-using AdvertisementApp.Dtos.MilitaryStatusDtos;
+﻿using AdvertisementApp.Dtos.MilitaryStatusDtos;
 
-namespace AdvertisementApp.Dtos.AdvertisementAppUserDtos
+namespace AdvertisementApp.Dtos
 {
     public class AdvertisementAppUserListDto
     {

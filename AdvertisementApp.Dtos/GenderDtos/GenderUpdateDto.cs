@@ -1,6 +1,6 @@
 ﻿using AdvertisementApp.Dtos.Interfaces;
 
-namespace AdvertisementApp.Dtos.GenderDtos
+namespace AdvertisementApp
 {
     public class GenderUpdateDto : IUpdateDto
     {

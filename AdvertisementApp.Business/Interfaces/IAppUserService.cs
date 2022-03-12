@@ -1,6 +1,5 @@
 ﻿using AdvertisementApp.Common;
-using AdvertisementApp.Dtos.AppRoleDtos;
-using AdvertisementApp.Dtos.AppUserDtos;
+using AdvertisementApp.Dtos;
 using AdvertisementApp.Entities;
 
 namespace AdvertisementApp.Business.Interfaces

@@ -1,6 +1,6 @@
 ﻿using AdvertisementApp.Dtos.Interfaces;
 
-namespace AdvertisementApp.Dtos.AppUserDtos
+namespace AdvertisementApp.Dtos
 {
     public class AppUserCreateDto : IDto
     {

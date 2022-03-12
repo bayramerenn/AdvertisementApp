@@ -7,7 +7,7 @@ namespace AdvertisementApp.Business.Extensions
     {
         public static List<CustomValidationError> ConvertToCustomValidationError(this ValidationResult validationResult)
         {
-            List<CustomValidationError> errors= new();
+            List<CustomValidationError> errors = new();
             foreach (var error in validationResult.Errors)
             {
                 errors.Add(new CustomValidationError()
