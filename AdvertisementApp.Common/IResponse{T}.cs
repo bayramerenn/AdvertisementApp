@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdvertisementApp.Common
 {
-    internal interface IResponse<T>:IResponse
+    public interface IResponse<T>:IResponse
     {
         public T Data { get; set; }
         public List<CustomValidatorError> ValidatorErrors { get; set; }
