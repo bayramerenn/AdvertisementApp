@@ -46,7 +46,7 @@ namespace AdvertisementApp.Business.DependencyResolvers.Microsoft
 
             services.AddScoped<IProvidedServiceService, ProvidedServiceManager>();
             
-            //services.AddScoped<IAdvertisementService, AdvertisementService>();
+            services.AddScoped<IAdvertisementService, AdvertisementManager>();
             //services.AddScoped<IAppUserService, AppUserService>();
             //services.AddScoped<IGenderService, GenderService>();
             //services.AddScoped<IAdvertisementAppUserService, AdvertisementAppUserService>();

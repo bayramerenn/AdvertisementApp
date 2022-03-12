@@ -19,6 +19,6 @@ namespace AdvertisementApp.Business.Interfaces
         Task<IResponse<UpdateDto>> UpdateAsync(UpdateDto dto);
         Task<IResponse<IDto>> GetByIdAsync<IDto>(int id);
         Task<IResponse> RemoveAsync(int id);
-        Task<IResponse<ListDto>> GetAllAsync();
+        Task<IResponse<List<ListDto>>> GetAllAsync();
     }
 }

@@ -15,10 +15,10 @@ namespace AdvertisementApp.Business.Services
         where ListDto : class, IDto, new()
         where T : BaseEntity
     {
-        private readonly IMapper _mapper;
+        protected readonly IMapper _mapper;
         private readonly IValidator<CreateDto> _createDtoValidator;
         private readonly IValidator<UpdateDto> _updateDtoValidator;
-        private readonly IUow _uow;
+        protected readonly IUow _uow;
 
         public Service(IMapper mapper, IValidator<CreateDto> createDtoValidator, IValidator<UpdateDto> updateDtoValidator, IUow uow)
         {
@@ -41,11 +41,11 @@ namespace AdvertisementApp.Business.Services
             return new Response<CreateDto>(dto, result.ConvertToCustomValidationError());
         }
 
-        public async Task<IResponse<ListDto>> GetAllAsync()
+        public async Task<IResponse<List<ListDto>>> GetAllAsync()
         {
             var data = await _uow.GetRepository<T>().GetAllAsync();
-            var dto = _mapper.Map<ListDto>(data);
-            return new Response<ListDto>(ResponseType.Success, dto);
+            var dto = _mapper.Map<List<ListDto>>(data);
+            return new Response<List<ListDto>>(ResponseType.Success, dto);
         }
 
         public async Task<IResponse<IDto>> GetByIdAsync<IDto>(int id)
