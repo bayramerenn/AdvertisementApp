@@ -20,7 +20,7 @@ namespace AdvertisementApp.Business.DependencyResolvers.Microsoft
             {
                 options.UseSqlServer(configuration.GetConnectionString("Local"));
             });
-            services.AddScoped<IUow,Uow>();
+            services.AddScoped<IUow, Uow>();
 
             services.AddAutoMapper(
                 typeof(ProvidedServiceProfile),
@@ -45,11 +45,10 @@ namespace AdvertisementApp.Business.DependencyResolvers.Microsoft
             services.AddTransient<IValidator<AdvertisementAppUserCreateDto>, AdvertisementAppUserCreateDtoValidator>();
 
             services.AddScoped<IProvidedServiceService, ProvidedServiceManager>();
-            
             services.AddScoped<IAdvertisementService, AdvertisementManager>();
-            //services.AddScoped<IAppUserService, AppUserService>();
-            //services.AddScoped<IGenderService, GenderService>();
-            //services.AddScoped<IAdvertisementAppUserService, AdvertisementAppUserService>();
+            services.AddScoped<IAppUserService, AppUserManager>();
+            services.AddScoped<IGenderService, GenderManager>();
+            services.AddScoped<IAdvertisementAppUserService, AdvertisementAppUserManager>();
         }
     }
 }

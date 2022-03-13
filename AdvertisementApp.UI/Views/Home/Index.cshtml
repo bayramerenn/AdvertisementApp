@@ -2,27 +2,35 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
- <!-- Content section 1-->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container px-5">
+        <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" asp-action="SignUp" asp-controller="Account">Kayıt Ol</a></li>
+                <li class="nav-item"><a class="nav-link" asp-action="SignIn" asp-controller="Account">Giriş Yap</a></li>
+                <li class="nav-item"><a class="nav-link" asp-action="HumanResource" asp-controller="Home">İnsan Kaynakları</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Header-->
+<!-- Content section 1-->
 @for (var i = 0; i < Model.Count; i++)
 {
     <section id="scroll">
         <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6 @(i % 2 == 0 ? "order-lg-2" : "")">
-                        <div class="p-5"><img class="img-fluid rounded-circle" src="@Model[i].ImagePath" alt="..." /></div>
-                    </div>
-                    <div class="col-lg-6 @(i % 2 == 0 ? "order-lg-1" : "")">
-                        <div class="p-5">
-                            <h2 class="display-4">For those about to rock...</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
-                        </div>
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 @(i % 2 == 0 ? "order-lg-2" : "")">
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="@Model[i].ImagePath" alt="..." /></div>
+                </div>
+                <div class="col-lg-6 @(i % 2 == 0 ? "order-lg-1" : "")">
+                    <div class="p-5">
+                        <h2 class="display-4">For those about to rock...</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod aliquid, mollitia odio veniam sit iste esse assumenda amet aperiam exercitationem, ea animi blanditiis recusandae! Ratione voluptatum molestiae adipisci, beatae obcaecati.</p>
                     </div>
                 </div>
             </div>
-        </section> 
-}
-  
-
-      
-  
+        </div>
+    </section>}

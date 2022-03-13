@@ -16,8 +16,8 @@ namespace AdvertisementApp.Business.Services
         where T : BaseEntity
     {
         protected readonly IMapper _mapper;
-        private readonly IValidator<CreateDto> _createDtoValidator;
-        private readonly IValidator<UpdateDto> _updateDtoValidator;
+        protected readonly IValidator<CreateDto> _createDtoValidator;
+        protected readonly IValidator<UpdateDto> _updateDtoValidator;
         protected readonly IUow _uow;
 
         public Service(IMapper mapper, IValidator<CreateDto> createDtoValidator, IValidator<UpdateDto> updateDtoValidator, IUow uow)

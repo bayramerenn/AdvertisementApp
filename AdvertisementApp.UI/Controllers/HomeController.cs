@@ -23,9 +23,10 @@ namespace AdvertisementApp.UI.Controllers
             return this.ResponseView(response);
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> HumanResource()
         {
-            return View();
+            var response = await _advertisementService.GetActivesAsync();
+            return this.ResponseView(response);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
